@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="pnView" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.signup.ViewsongController">
+   <children>
+      <ScrollPane layoutX="81.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0">
+         <content>
+            <Text fx:id="displaysongs" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="428.1367530822754" />
+         </content>
+      </ScrollPane>
+      <Button fx:id="btndisplay" layoutX="81.0" layoutY="309.0" mnemonicParsing="false" onAction="#onDisplayButtonClick" text="Display" />
+      <Button fx:id="btnBack" layoutX="456.0" layoutY="309.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+   </children>
+</AnchorPane>
