@@ -6,12 +6,21 @@
 
 <AnchorPane fx:id="pnView" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.signup.ViewsongController">
    <children>
-      <ScrollPane layoutX="81.0" layoutY="100.0" prefHeight="200.0" prefWidth="427.0">
+      <ScrollPane layoutX="40.0" layoutY="43.0" prefHeight="253.0" prefWidth="292.0">
          <content>
-            <Text fx:id="displaysongs" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="428.1367530822754" />
+            <Text fx:id="displaysongs" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="428.1367530822754">
+               <font>
+                  <Font name="Inter Semi Bold" size="14.0" />
+               </font></Text>
          </content>
       </ScrollPane>
-      <Button fx:id="btndisplay" layoutX="81.0" layoutY="309.0" mnemonicParsing="false" onAction="#onDisplayButtonClick" text="Display" />
-      <Button fx:id="btnBack" layoutX="456.0" layoutY="309.0" mnemonicParsing="false" onAction="#onBackButtonClick" text="Back" />
+      <Button fx:id="btndisplay" layoutX="347.0" layoutY="48.0" mnemonicParsing="false" onAction="#onDisplayButtonClick" style="-fx-background-color: #D397F8;" text="Display">
+         <font>
+            <Font name="Inter Semi Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnBack" layoutX="354.0" layoutY="263.0" mnemonicParsing="false" onAction="#onBackButtonClick" style="-fx-background-color: #D397F8;" text="Back">
+         <font>
+            <Font name="Inter Semi Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

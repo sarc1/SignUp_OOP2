@@ -10,6 +10,8 @@ import javafx.scene.text.Text;
 import java.io.IOException;
 import java.sql.*;
 
+import static com.example.signup.HelloController.currentUser;
+
 public class RemovesongController {
     public TextField songremoveinput;
     public Text removeerror;
@@ -17,15 +19,16 @@ public class RemovesongController {
     public void onRemoveButtonClick() throws IOException{
         try (Connection c = SQLConnection.getConnection();
              PreparedStatement statement = c.prepareStatement(
-                     "DELETE FROM playlist WHERE songtitle =?"
+                     "DELETE FROM playlist WHERE songtitle =? AND userid=?"
              )){
             Statement statement1 = c.createStatement();
-            String query1 = "SELECT * FROM playlist WHERE songtitle = songtitle";
+            String query1 = "SELECT * FROM playlist WHERE songtitle = songtitle AND userid=" + currentUser;
 
             ResultSet res = statement1.executeQuery(query1);
             if(res.next()){
                 String song = songremoveinput.getText();
                 statement.setString(1, song);
+                statement.setString(2, String.valueOf(currentUser));
                 statement.executeUpdate();
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setContentText("Song successfully deleted!");

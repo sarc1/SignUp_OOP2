@@ -43,4 +43,10 @@ public class HomeController {
         p.getChildren().clear();
         p.getChildren().add(scene);
     }
+    public void onDeleteButtonClick() throws IOException{
+        AnchorPane p  = (AnchorPane) pnHomePage;
+        Parent scene = FXMLLoader.load(getClass().getResource("deleteaccount.fxml"));
+        p.getChildren().clear();
+        p.getChildren().add(scene);
+    }
 }

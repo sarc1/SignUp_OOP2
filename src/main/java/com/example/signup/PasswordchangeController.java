@@ -45,13 +45,16 @@ public class PasswordchangeController {
                 alert.setContentText("Password changed successfully!");
                 alert.setHeaderText("Password Changed.");
                 alert.showAndWait();
+
+                AnchorPane p  = (AnchorPane) pnChangePassword;
+                Parent scene = FXMLLoader.load(getClass().getResource("home.fxml"));
+                p.getChildren().clear();
+                p.getChildren().add(scene);
+
             }else{
                 accounterror.setText("Account does not exist.");
             }
-            AnchorPane p  = (AnchorPane) pnChangePassword;
-            Parent scene = FXMLLoader.load(getClass().getResource("home.fxml"));
-            p.getChildren().clear();
-            p.getChildren().add(scene);
+
 
         }catch (SQLException e){
             e.printStackTrace();

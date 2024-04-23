@@ -35,7 +35,9 @@ public class SignUpController {
 
             if(res.next()){
                 errortext.setText("This username already exist!");
-            }else{
+            } else if (usernameInput.getText().isEmpty() || passwordInput.getText().isEmpty()) {
+                errortext.setText("Invalid Username / Password");
+            } else{
                 statement.setString(1, username);
                 statement.setString(2, password);
                 statement.executeUpdate();

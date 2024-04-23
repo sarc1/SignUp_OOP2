@@ -3,11 +3,12 @@
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="pnLoginPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.signup.HelloController">
+<AnchorPane fx:id="pnLoginPage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.signup.HelloController">
    <children>
-      <GridPane layoutX="132.0" layoutY="101.0" prefHeight="181.0" prefWidth="335.0">
+      <GridPane layoutX="48.0" layoutY="91.0" prefHeight="181.0" prefWidth="335.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="163.0" minWidth="10.0" prefWidth="116.0" />
           <ColumnConstraints hgrow="SOMETIMES" maxWidth="224.0" minWidth="10.0" prefWidth="220.0" />
@@ -32,18 +33,30 @@
                   <Font name="Inter Regular" size="14.0" />
                </font>
             </Label>
-            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="90.0" text="LOGIN" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#onLoginButtonClick" prefHeight="30.0" prefWidth="90.0" style="-fx-background-color: #D397F8;" text="LOGIN" GridPane.columnIndex="1" GridPane.rowIndex="4">
                <GridPane.margin>
                   <Insets left="60.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Inter Regular" size="12.0" />
+               </font>
             </Button>
             <PasswordField fx:id="passwordInput" prefHeight="34.0" prefWidth="221.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Text fx:id="usernameerror" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="220.13671875" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Text fx:id="passworderror" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="221.13671875" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Button fx:id="btnSignUp" mnemonicParsing="false" onAction="#onSignupButtonClick" prefHeight="32.0" prefWidth="92.0" text="Sign Up" GridPane.columnIndex="1" GridPane.rowIndex="5">
+            <Text fx:id="usernameerror" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="220.13671875" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="Inter Italic" size="12.0" />
+               </font></Text>
+            <Text fx:id="passworderror" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="221.13671875" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <font>
+                  <Font name="Inter Regular" size="12.0" />
+               </font></Text>
+            <Button fx:id="btnSignUp" mnemonicParsing="false" onAction="#onSignupButtonClick" prefHeight="32.0" prefWidth="92.0" style="-fx-background-color: #D397F8;" text="Sign Up" textFill="#080808" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <GridPane.margin>
                   <Insets left="60.0" />
                </GridPane.margin>
+               <font>
+                  <Font name="Inter Regular" size="12.0" />
+               </font>
             </Button>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="You don't have an account?" wrappingWidth="153.384765625" GridPane.rowIndex="5">
                <GridPane.margin>
@@ -55,9 +68,25 @@
             </Text>
          </children>
       </GridPane>
-      <Text layoutX="216.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYLIST">
+      <Text layoutX="131.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PLAYLIST">
          <font>
-            <Font name="Inter Regular" size="36.0" />
-         </font></Text>
+            <Font name="Georgia" size="36.0" />
+         </font>
+         <fill>
+            <LinearGradient endX="0.4772727200479218" endY="1.0" startX="0.48484847852678015" startY="0.29545458880337805">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.3423294425010681" green="0.04502924159169197" blue="0.34736841917037964" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill></Text>
    </children>
 </AnchorPane>

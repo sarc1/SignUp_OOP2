@@ -22,6 +22,7 @@ public class CreateTable {
         Statement statement1 = c.createStatement()){
             String query = "CREATE TABLE IF NOT EXISTS playlist(" +
                     "id INT AUTO_INCREMENT PRIMARY KEY," +
+                    "userid INT, FOREIGN KEY(userid) REFERENCES users(id) ON DELETE CASCADE," +
                     "songtitle VARCHAR(100) NOT NULL)";
             statement1.execute(query);
             System.out.println("Table created!");

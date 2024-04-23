@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import static com.example.signup.HelloController.currentUser;
+
 public class ViewsongController {
     public Text displaysongs;
     public AnchorPane pnView;
@@ -21,11 +23,10 @@ public class ViewsongController {
 
             StringBuilder sb = new StringBuilder();
 
-            String query = "SELECT * FROM playlist";
+            String query = "SELECT * FROM playlist WHERE userid=" + currentUser;
             ResultSet res = statement.executeQuery(query);
 
             while(res.next()){
-                //append res.getString("songname")
                 sb.append(res.getString("songtitle") + "\n");
             }
             displaysongs.setText(sb.toString());
@@ -37,7 +38,7 @@ public class ViewsongController {
 
     public void onBackButtonClick() throws IOException{
         AnchorPane p  = (AnchorPane) pnView;
-        Parent scene = FXMLLoader.load(getClass().getResource("editplaylist.fxml"));
+        Parent scene = FXMLLoader.load(getClass().getResource("home.fxml"));
         p.getChildren().clear();
         p.getChildren().add(scene);
     }

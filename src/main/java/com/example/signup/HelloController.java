@@ -21,6 +21,8 @@ public class HelloController {
     public Text passworderror;
     public Text usernameerror;
 
+    public static int currentUser;
+
     public AnchorPane pnLoginPage;
     @FXML
     protected void onLoginButtonClick() throws IOException {
@@ -33,6 +35,7 @@ public class HelloController {
 
             while(res.next()){
                 if(username.getText().equals(res.getString("username")) && passwordInput.getText().equals(res.getString("password"))){
+                    currentUser = res.getInt(1);
                     AnchorPane p  = (AnchorPane) pnLoginPage;
                     Parent scene = FXMLLoader.load(getClass().getResource("home.fxml"));
                     p.getChildren().clear();
@@ -46,10 +49,10 @@ public class HelloController {
                     usernameerror.setText("Incorrect Username.");
                     break;
                 }
-                else{
-                    passworderror.setText("Username/Password incorrect.");
-                    break;
-                }
+            }
+
+            if(!res.next()){
+                passworderror.setText("Account does not exist");
             }
 
         }catch (SQLException e){
